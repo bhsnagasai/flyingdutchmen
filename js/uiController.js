@@ -1,6 +1,7 @@
 $(function(){
     htmlElements.englishIcon.click(() => changeToEng());
     htmlElements.swedishIcon.click(() => changeToSwed());
+    setCopyrightYear();
 });
 
 
@@ -13,4 +14,7 @@ function changeToEng(){
     htmlElements.login.text(language.eng.Login);
     htmlElements.aboutUs.text(language.eng.About);
     htmlElements.contactUs.text(language.eng.Contact);
+}
+function setCopyrightYear(){
+    htmlElements.copyrightText.text(new Date().getFullYear())
 }

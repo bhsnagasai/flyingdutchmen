@@ -82,9 +82,11 @@ body {
 /* Add a color to the active/current link */
 .topnav a.active {
     /* background-color: #4CAF50; */
-    color: white;
+    /* color: white; */
 }
-
+.nav_title{
+  word-break:break-all;
+}
 .leftnav, .middlenav{
     float: left;
 }
@@ -105,15 +107,205 @@ body {
     width: 10%;
     height: 10%;
     position: relative;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
     -webkit-animation:linear infinite;
     -webkit-animation-name: run;
     -webkit-animation-duration: 15s;
 }
 @-webkit-keyframes run {
-    0% { left: 100%; bottom: 0; top: 0;}
+    0% { left: 0; bottom: 0; top: 0;}
     20% { top: 20px;}
     40% { top: 0; bottom: 0;}
     60% {top: 0; bottom: 20px;}
-    80%{ left: 0; top: 20px; bottom: 0px;}
-    100%{left: 0; top: 20px; bottom: 0px;}
+    80%{ left: 100%; top: 20px; bottom: 0px;}
+    100%{left: 100%; top: 20px; bottom: 0px;}
 }
+
+
+/* Login Model CSS*/
+
+/* .Modal {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-transition: 0.5s;
+    overflow: auto;
+    transition: all 0.3s linear;
+  }
+  
+  .Modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+    max-width: 300px;
+    height: 450px;
+  } */
+  
+  .ModalOpen { overflow: hidden; }
+  
+  .is-hidden { display: none; }
+  
+  .is-visuallyHidden { opacity: 0; }
+
+  /* .Close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 16px;
+  }
+  
+  .Close:hover, .Close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  } */
+
+  .is-blurred {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+  }
+
+  
+
+
+  .Modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .Modal-content {
+    position: relative;
+    background-color: #fefefe42;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    max-width: 300px;
+    border-radius: 4px;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #e6e933;
+    color: white;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+ .uname{  
+    width: 250px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+.pass{  
+    width: 250px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+.log{  
+    width: 250px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+}  
+
+.alert-box {
+  width: 20%;
+  right: 0px;
+  top: 20px;
+  position: absolute;
+  height: 30px;
+  line-height: 30px;
+  font-size: larger;
+}
+.alert-box > span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+.alert-box.callout {
+  color: #fefefe;
+  font-weight: bold;
+}
+
+.alert-box.success {
+  border: 3px solid #3adb76;
+  border-radius: 5px;
+  background-color: rgba(58, 219, 117, 0.459);
+}
+
+.alert-box.alert {
+  border: 3px solid #cc4b37;
+  border-radius: 5px;
+  background-color: rgba(204, 75, 55, 0.459);
+}
+
+.alert-box.warning {
+  border: 3px solid #ffae00;
+  border-radius: 5px;
+  background-color: rgba(255, 174, 0, 0.459);
+}
+
+.alert-box i {
+  border: 2px solid #fefefe;
+  border-radius: 50%;
+  padding: .3em .325em;
+  margin-right: 0.5rem;
+}
+

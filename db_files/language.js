@@ -10,7 +10,7 @@ var language = {
         About: "About Us",
         Drink: "Beverages",
         Chefs: "Chefs",
-        Contact: "Ccontact Us",
+        Contact: "Contact Us",
         Content: "WELCOME TO FLYING DUTCHMAN..",
         Content2: "BAR OF BEER LOVERS OO YES!!",
         Order: "Order Now",
