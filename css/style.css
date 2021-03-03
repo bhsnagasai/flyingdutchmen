@@ -99,9 +99,7 @@ body {
     height: 36px;
 }
 
-.content, .avaItems, .cartItems{
-    display: none;
-}
+
 
 .flying_dutchmen_img{
     width: 10%;
@@ -309,3 +307,56 @@ body {
   margin-right: 0.5rem;
 }
 
+.table {
+  display:table;
+  text-align:center;
+  width:100%;
+  height:100%;
+  table-layout:fixed;
+}
+.cell {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.page_desc{
+  /* position: absolute;  */
+  left: 50%; 
+  /* margin-left: 225px; 
+  width: 450px; 
+  height: 250px; */
+  width: 800px;
+  text-align: left;
+  padding:50px 0;
+  /* border: 2px solid  #FFC90A; */
+  display:inline-block;
+}
+
+.page_desc > p{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 49px;
+  color: #FFC90A;
+}
+
+.buttonlink{
+	display:block;
+	width:9em;
+	height:2em;
+	color:#333;
+	line-height:2;
+	text-align:center;
+	text-decoration:none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 49px;
+  color: #FFC90A;
+  text-shadow: 0px 4px 4px rgba(255, 0, 0, 0.25);
+  float: left;
+  background-color: transparent;
+  color: #dfa042;
+  margin-right: 15px;
+  border: 1px solid #dfa042;
+}

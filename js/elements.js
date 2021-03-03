@@ -10,6 +10,10 @@ $(function(){
         swedishIcon: $('#swed'),
         englishIcon: $('#eng'),
         container: $('#container'),
-        copyrightText: $("#copyrightyear")
+        copyrightText: $("#copyrightyear"),
+        desc1: $("#desc1"),
+        desc2: $("#desc2"),
+        orderNow: $("#orderNow"),
+        bookNow: $("#bookNow")
     };
 });
