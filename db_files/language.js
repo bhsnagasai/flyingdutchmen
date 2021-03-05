@@ -12,9 +12,12 @@ var language = {
         Chefs: "Chefs",
         Contact: "Contact Us",
         Content: "WELCOME TO FLYING DUTCHMAN..",
-        Content2: "BAR OF BEER LOVERS OO YES!!",
+        Content2: "",
         Order: "Order Now",
         Reserve: "Reservations",
+        AvalItmsTitle: "Available Items",
+        SeleItmsTitle: "Selected Items",
+        drinkMenuItems: ["Beer", "Spirits", "Wine", "Whiskey"]
     },
 
     swe: {
@@ -25,8 +28,11 @@ var language = {
         Chefs: "Kokar",
         Contact: "Kontakta oss",
         Content: "VÄLKOMMEN TILL FLYING DUTCHMAN..",
-        Content2: "BAR MED ÖLÄLSKARE OO YEHH!!",
+        Content2: "",
         Order: "Beställ nu",
         Reserve: "Reservationer",
+        AvalItmsTitle: "Tillgängliga artiklar",
+        SeleItmsTitle: "Valda objekt",
+        drinkMenuItems: ["Öl", "Sprit", "Vin", "Whisky"]
     }
 };

@@ -1,5 +1,5 @@
 let currentLanguage = 0; //0  for English, 1 for Swedish
-
+let displayItems = 10; // Number of items to display in order page
 
 
 //Fetches cookie for the given session
@@ -36,8 +36,10 @@ function setCookie(cname, value, hours){
 }
 
 $(function(){
+    htmlElements.title.click(() => setIndexPageData());
     htmlElements.englishIcon.click(() => changeToEng());
     htmlElements.swedishIcon.click(() => changeToSwed());
+    htmlElements.orderNow.click(() => setOrderPageData());
     setCopyrightYear();
     setLanguage();
     setIndexPageData();
@@ -58,6 +60,9 @@ function changeToSwed(){
     htmlElements.desc2.text(language.swe.Content2);
     htmlElements.orderNow.text(language.swe.Order);
     htmlElements.bookNow.text(language.swe.Reserve);
+    htmlElements.avalItmsTitle.text(language.swe.AvalItmsTitle);
+    htmlElements.selItmsTitle.text(language.swe.SeleItmsTitle);
+    htmlElements.avalItemsMenu.html(setmenuItems(language.swe.drinkMenuItems));
     setCookie("langaugeSelected", currentLanguage,3600);
 }
 function changeToEng(){
@@ -69,11 +74,23 @@ function changeToEng(){
     htmlElements.desc2.text(language.eng.Content2);
     htmlElements.orderNow.text(language.eng.Order);
     htmlElements.bookNow.text(language.eng.Reserve);
+    htmlElements.avalItmsTitle.text(language.eng.AvalItmsTitle);
+    htmlElements.selItmsTitle.text(language.eng.SeleItmsTitle);
+    htmlElements.avalItemsMenu.html(setmenuItems(language.eng.drinkMenuItems));
     setCookie("langaugeSelected", currentLanguage, 3600);
 }
 function setCopyrightYear(){
     htmlElements.copyrightText.text(new Date().getFullYear())
 }
+
+function setmenuItems(menus){
+    str = '';
+    menus.forEach((item) => {
+        str += `<div class="drinkType" onclick="displayAvailableItems(this);">${item}</div>`;
+    });
+    return str;
+}
+
 
 function makeUiElementsNone(){
     $("#index_page_flying").hide();
@@ -86,8 +103,42 @@ function setIndexPageData(){
     //Make all elements disappear
     makeUiElementsNone();
 
-    // Make Index page Elements display.
+    // Make index page elements display.
     $("#index_page_flying").show();
     $("#index_page").show();
 }
 
+function setOrderPageData(){
+    //Make all elements disappear
+     makeUiElementsNone();
+    // Make order page elements display.
+    $("#order_page").show();
+    $(".drinkType")[0].click();
+}
+
+
+function displayAvailableItems(elem){
+    $(".drinkType").removeClass("active");
+    $(elem).addClass("active");
+    let drinks =  getAllDrinkofType($(elem).text()).slice(0, displayItems);
+    console.log(drinks);
+    htmlElements.availItems.empty();
+    htmlElements.availItems.append(generateDrinksHtml(drinks));
+
+}
+
+
+function generateDrinksHtml(drinks){
+    let html = ``;
+
+    drinks.forEach((drink) => {
+        html +=`
+        <div draggable="true" id="${drink.nr}"> 
+        <div  class="availItemTitle"> ${drink.name}</div>
+        <span class="availItemAlchPer">${drink.alcoholstrength}</span>
+        <span class="availItemPrice"> ${drink.priceinclvat}</span><br>
+        </div>
+        `;
+    });
+    return html;
+}

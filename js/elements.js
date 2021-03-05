@@ -3,6 +3,7 @@ var htmlElements = {};
 
 $(function(){
     htmlElements = {
+        title: $('#title'),
         login: $('#login'),
         aboutUs: $('#about_us'),
         contactUs: $('#contact_us'),
@@ -14,6 +15,11 @@ $(function(){
         desc1: $("#desc1"),
         desc2: $("#desc2"),
         orderNow: $("#orderNow"),
-        bookNow: $("#bookNow")
+        bookNow: $("#bookNow"),
+        avalItmsTitle: $("#avlItmsTitle"),
+        selItmsTitle: $("#selItmsTitle"),
+        avalItemsMenu: $("#avalItemsMenu"),
+        availItems: $("#availItems"),
+        selectedItems: $("#selectedItems")
     };
 });

@@ -7,6 +7,7 @@
     <link rel='icon' href='images/favicon.ico' type='image/x-icon'/ >
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="db_files/Beverages.js"></script>
+    <script type="text/javascript" src="db_files/Beverages_eng.js"></script>
     <script type="text/javascript" src="db_files/DBLoaded.js"></script>
     <script type="text/javascript" src="db_files/loader.js"></script>
     <script type="text/javascript" src="db_files/language.js"></script>
@@ -48,8 +49,27 @@
                     </div>
                 </div>
             </div>
-            <div class="avaItems"></div>
-            <div class="cartItems"></div>
+            <div id="order_page">
+                <div id="avalItemsMenu" class="avalItemsMenu">
+                </div>
+                <div class="table">
+                    <div class='cell'>
+                        <div class="prodDesc"> 
+                            <h2 id="avlItmsTitle"></h2> 
+                            
+                            <div id="availItems" class="availItems">
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class='cell'>
+                        <div class="prodDesc"> 
+                            <h2 id="selItmsTitle"></h2> 
+                            <div id="selectedItems" class="selectedItems"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
         </div>
         
     </div>

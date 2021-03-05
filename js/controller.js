@@ -1,3 +1,12 @@
+function convertJSONtoString(json){
+    return JSON.stringify(json);
+}
+
+function convertStringtoJSON(string){
+    return JSON.parse(string);
+}
+
+
 $(function(){
     let loginmodal = `
         <div id="myModal" class="Modal is-hidden is-visuallyHidden">
@@ -68,8 +77,10 @@ $(function(){
             return;
         }
         if(validateEmail(uname)){
-            if(checkUserDetails(uname, upass)){
+            let response = checkUserDetails(uname, upass);
+            if(response.result){
                displaySuccess("Login Successful!", modal);
+               setCookie("userdetails", convertJSONtoString(response), 24);
             }
             else{
                 displayFailed("Login Failed!");
